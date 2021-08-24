@@ -144,7 +144,7 @@ function primaryexportdisable_civicrm_themes(&$themes) {
 }
 
 function primaryexportdisable_civicrm_buildForm($formName, $form) {
-  if ($formName === "CRM_Export_Form_Select") {
+  if ($form instanceof CRM_Export_Form_Select) {
     $form->setDefaults(['exportOption' => CRM_Export_Form_Select::EXPORT_SELECTED]);
     $exportOptionElements = $form->getElement('exportOption')->getElements();
     foreach ($exportOptionElements as $exportOption) {
